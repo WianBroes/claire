@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="hero">
+  <img src="{{ .Params.hero_image | default "/images/portrait/IMG_0763-700x467.jpg" }}" alt="Claire Frament">
+  <div class="hero-texte">
+    <h1>{{ .Params.tagline | default "Comédienne<br>théâtre jeune public" | safeHTML }}</h1>
+    <p>{{ .Params.description | default "Clown, masque, voix, mouvement — des univers qui parlent aux enfants et aux adultes." }}</p>
+  </div>
+</div>
+{{ end }}

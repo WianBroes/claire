@@ -1,0 +1,4 @@
+baseURL = 'https://claire-site.netlify.app/'
+languageCode = 'fr-FR'
+title = 'Claire Frament'
+theme = 'claire'

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main>
+  <h2>Presse</h2>
+  {{ range .Pages }}
+  <blockquote class="citation">
+    {{ .Content }}
+    {{ with .Params.source }}<span class="source">{{ . }}</span>{{ end }}
+  </blockquote>
+  {{ end }}
+  {{ if not .Pages }}
+  <p style="color:#999">Aucune revue de presse pour le moment.</p>
+  {{ end }}
+</main>
+{{ end }}

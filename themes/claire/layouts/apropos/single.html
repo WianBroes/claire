@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main>
+  <h2>À propos</h2>
+  <div class="apropos">
+    <img src="{{ .Params.portrait | default "/images/portrait/IMG_0743-700x467.jpg" }}" alt="Claire Frament">
+    <div class="apropos-texte">
+      {{ .Content }}
+    </div>
+  </div>
+</main>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "main" }}
+<main>
+  <h2>Créations plastiques</h2>
+  {{ with .Params.images }}
+  <div class="gallery">
+    {{ range . }}
+    <a href="{{ . }}"><img src="{{ . }}" alt=""></a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <hr>
+
+  <h2>Vidéo</h2>
+  <div class="videos">
+    {{ with .Params.videos }}
+    {{ range . }}
+    <iframe width="560" height="315" src="{{ . }}" allowfullscreen></iframe>
+    {{ end }}
+    {{ else }}
+    <p style="color:#999">Vidéos à venir.</p>
+    {{ end }}
+  </div>
+
+  <hr>
+
+  <h2>Son</h2>
+  <div class="sons">
+    <p style="color:#999">Enregistrements à venir.</p>
+  </div>
+</main>
+{{ end }}

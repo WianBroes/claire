@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main>
+  <h2>Spectacles</h2>
+  {{ range .Pages.ByWeight }}
+  <div class="spectacle">
+    <h3>{{ .Title }}</h3>
+    {{ with .Params.meta }}<div class="meta">{{ . }}</div>{{ end }}
+    {{ with .Params.images }}
+    <div class="gallery">
+      {{ range . }}
+      <a href="{{ . }}"><img src="{{ . }}" alt=""></a>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ with .Content }}<div class="spectacle-texte">{{ . }}</div>{{ end }}
+  </div>
+  {{ end }}
+</main>
+{{ end }}

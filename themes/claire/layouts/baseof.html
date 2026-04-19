@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}Claire Frament{{ else }}{{ .Title }} — Claire Frament{{ end }}</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav>
+    <a class="nom" href="/">Claire Frament</a>
+    <ul>
+      <li><a href="/spectacles/"{{ if eq .Section "spectacles" }} class="active"{{ end }}>Spectacles</a></li>
+      <li><a href="/creations/"{{ if eq .RelPermalink "/creations/" }} class="active"{{ end }}>Créations</a></li>
+      <li><a href="/apropos/"{{ if eq .RelPermalink "/apropos/" }} class="active"{{ end }}>À propos</a></li>
+      <li><a href="/presse/"{{ if eq .Section "presse" }} class="active"{{ end }}>Presse</a></li>
+      <li><a href="/contact/"{{ if eq .RelPermalink "/contact/" }} class="active"{{ end }}>Contact</a></li>
+    </ul>
+  </nav>
+
+  {{ block "main" . }}{{ end }}
+
+  <footer>
+    &copy; Claire Frament
+  </footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
